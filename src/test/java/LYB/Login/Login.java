@@ -19,5 +19,4 @@ public class Login {
     public SelenideElement send = $x("//*[@id=\"cmpntForm\"]/div[2]/button[1]"); //Foor the send me a reset link
 
     public SelenideElement cancel = $x("//*[@id=\"cmpntForm\"]/div[2]/button[2]"); //For cancel the resetting password.
-    public SelenideElement cancel2 = $x("//*[@id=\"cmpntForm\"]/div[2]/button[2]"); //For cancel the resetting password.
 }
