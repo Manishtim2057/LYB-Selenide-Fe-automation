@@ -1,16 +1,13 @@
 package LYB.Login;
 
+import LYB.Base.BaseButtonVariable;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class Login {
-    public SelenideElement username = $x("//*[@id=\"username\"]");
-    public SelenideElement password = $x("//*[@id=\"password\"]");
-
-    public SelenideElement login = $x("//*[@id=\"loginForm\"]/div[3]/button");
+public class Login  extends BaseButtonVariable {
 
     public SelenideElement forgot = $x("//*[@id=\"loginForm\"]/div[3]/a");//for the forgot password
 

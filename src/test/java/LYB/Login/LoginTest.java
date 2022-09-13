@@ -25,7 +25,7 @@ public class LoginTest {
 
     @BeforeEach
     public void setUp() {
-        open("http://localhost:4200/");
+        open("http://localhost:4200/auth/login");
     }
 
     @Test
@@ -41,6 +41,7 @@ public class LoginTest {
 
         //login.username.shouldHave(attribute("value", "superuser@learnyourbenefits.com"));
     }
+
     @Test
     public void invalidCredentialUsername() throws InterruptedException {
         Thread.sleep(2000);
@@ -49,6 +50,7 @@ public class LoginTest {
         login.username.sendKeys("superusers@learnyourbenefits.com");
         login.password.sendKeys("lyb@2019");
         login.login.click();
+
     }
 
     @Test
@@ -70,7 +72,7 @@ public class LoginTest {
         login.password.sendKeys("lyb@2019");
         login.login.click();
         $x("//*[@id=\"loginForm\"]/div[3]/button").shouldBe(disabled);
-   }
+    }
 
     public void OnePasswordEmptyCredential() throws InterruptedException {
         Thread.sleep(2000);
@@ -79,14 +81,14 @@ public class LoginTest {
         login.username.sendKeys("superuser@learnyourbenefits.com");
         login.password.sendKeys("");
         login.login.click();
-          $x("//*[@id=\"loginForm\"]/div[3]/button").shouldBe(disabled);
+        $x("//*[@id=\"loginForm\"]/div[3]/button").shouldBe(disabled);
     }
 
-        @Test
+    @Test
     public void validCredential() throws InterruptedException {
         Thread.sleep(2000);
         $x("//*[@id=\"loginToast\"]/div[2]/span").shouldBe(hidden);
-       login.username.sendKeys("superuser@learnyourbenefits.com");
+        login.username.sendKeys("superuser@learnyourbenefits.com");
         login.password.sendKeys("lyb@2019");
         login.login.click();
 
@@ -99,7 +101,8 @@ public class LoginTest {
     public void ForgotPassword() throws InterruptedException {
 
 
-       $x("//*[@id=\"cvAngoxemI\"]/div[1]/i").shouldBe(hidden);;
+        $x("//*[@id=\"cvAngoxemI\"]/div[1]/i").shouldBe(hidden);
+        ;
         login.forgot.click();
         Thread.sleep(2000);
         login.email.sendKeys("manish.timalsina@ensue.us");
@@ -109,6 +112,7 @@ public class LoginTest {
         $x("//*[@id=\"cvAngoxemI\"]/div[1]/i").shouldBe(hidden);
 
     }
+
     @Test
     public void CancelForgotPassword() throws InterruptedException {
         Thread.sleep(2000);
@@ -119,5 +123,20 @@ public class LoginTest {
         login.cancel.click();
 
         $x("//*[@id=\"loginToast\"]/div[2]/span").shouldBe(hidden);
-  }
+    }
+
+    @Test
+    public void InvalidForgotPassword() throws InterruptedException{
+        Thread.sleep(2000);
+        $x("//*[@id=\"nico-toast-container\"]").shouldBe(hidden);
+
+        login.forgot.click();
+        login.email.sendKeys("manish.timalsina.us");
+        Thread.sleep(2000);
+        login.cancel.click();
+
+        $x("//*[@id=\"nico-toast-container\"]").shouldBe(hidden);
+    }
+
+    
 }
