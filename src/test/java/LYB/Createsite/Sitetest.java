@@ -105,7 +105,7 @@ public class Sitetest extends BaseSetup {
         Thread.sleep(1000);
         site.NewSiteButton.click();
         site.cancel.click();
-
+    $x("/html/body/nico-empty-modal/div/div/div/app-create-site-modal").shouldBe(hidden);
 
     }
     @Test
@@ -113,7 +113,7 @@ public class Sitetest extends BaseSetup {
         Thread.sleep(1000);
         site.NewSiteButton.click();
         site.close.click();
-
+        $x("/html/body/nico-empty-modal/div/div/div/app-create-site-modal").shouldBe(hidden);
     }
 
 }
