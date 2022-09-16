@@ -15,7 +15,7 @@ public class Sitetest extends BaseSetup {
 
     @BeforeEach
     public void setUp() throws InterruptedException {
-        open("http://localhost:4200/manage/sites");
+        open("http://localhost:4200/auth/login");
     }
 
     @Test

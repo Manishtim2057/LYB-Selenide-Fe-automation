@@ -38,4 +38,10 @@ public static SelenideElement close = $x("//*[@id=\"nico-modal-body\"]/app-creat
 public static SelenideElement SaveButton = $x("//*[@id=\"nico-modal-body\"]/app-create-site-modal/div[3]/button");
 
 
+ public static SelenideElement UseAdvanceForm =  $x("//*[@id=\"nico-modal-body\"]/app-create-site-modal/div[3]/a[1]");//User Advance Form button.
+
+
+
+
+
 }
