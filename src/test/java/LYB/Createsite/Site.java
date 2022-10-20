@@ -10,11 +10,11 @@ public class Site {
 
  public static SelenideElement NewSiteButton =  $x("/html/body/app-root/admin-root/section/div/section/div/app-sites/div/section/app-sites-list/section[1]/div/button[1]");
 
- public static SelenideElement logo = $x("//*[@id=\"edit-form\"]/div[1]/div[2]/label/span/i");
+ public static SelenideElement Logo = $x("//*[@id=\"edit-form\"]/div[1]/div[2]/label/span/i");
 
  public static SelenideElement SiteTitle = $x("//*[@id=\"title\"]");
 
- public static SelenideElement subdomain = $x("//*[@id=\"domain\"]");
+ public static SelenideElement SubDomain = $x("//*[@id=\"domain\"]");
 
  public static SelenideElement PrimaryColor = $x("//*[@id=\"primary_color\"]");
 
@@ -36,6 +36,8 @@ public static SelenideElement cancel = $x("//*[@id=\"nico-modal-body\"]/app-crea
 public static SelenideElement close = $x("//*[@id=\"nico-modal-body\"]/app-create-site-modal/div[1]/button");
 
 public static SelenideElement SaveButton = $x("//*[@id=\"nico-modal-body\"]/app-create-site-modal/div[3]/button");
+
+ public static SelenideElement SiteDescription = $x("//*[@id=\"description\"]");
 
 
  public static SelenideElement UseAdvanceForm =  $x("//*[@id=\"nico-modal-body\"]/app-create-site-modal/div[3]/a[1]");//User Advance Form button.

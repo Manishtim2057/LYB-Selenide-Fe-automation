@@ -14,7 +14,7 @@ public class FileUpload {
         StringSelection select = new StringSelection(filepath);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(select, null);
 
-        robot.setAutoDelay(400);
+        robot.setAutoDelay(700);
         // paste the string
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_V);
