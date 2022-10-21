@@ -5,15 +5,16 @@ import LYB.Createsite.AdvanceForm.AdvanceSite;
 import LYB.Createsite.Site;
 import LYB.FileUpload.FileUpload;
 import com.codeborne.selenide.Condition;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.awt.*;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
 public class SiteEditTest extends BaseSetup {
+    TestMethodOrder Ascending;
 
     @BeforeEach
     public void setUp() throws InterruptedException, AWTException {
@@ -22,32 +23,37 @@ public class SiteEditTest extends BaseSetup {
     }
 
     @Test
+    @Order(1)
     public void t1SiteListModalShouldGetAppear() {
         SiteEdit.SitesManagement.shouldBe(visible);
 
     }
 
     @Test
-    public void t3PreviewSiteShouldBeVisibleAfterEditSiteIsClicked() {
+    @Order(2)
+    public void t2PreviewSiteShouldBeVisibleAfterEditSiteIsClicked() {
         SiteEdit.EditSite.click();
         SiteEdit.SitePreview.shouldBe(visible);
     }
 
     @Test
-    public void t4SiteInformationShouldBeClicked() {
+    @Order(3)
+    public void t3SiteInformationShouldBeClicked() {
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
     }
 
     @Test
-    public void t5SiteInformationPageShouldBePreviewed() {
+    @Order(4)
+    public void t4SiteInformationPageShouldBePreviewed() {
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
         SiteEdit.PrimaryInformation.shouldBe(visible);
     }
 
     @Test
-    public void t6PrimaryInformationShouldBeVisible() {
+    @Order(5)
+    public void t5PrimaryInformationShouldBeVisible() {
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
         SiteEdit.PrimaryInformation.click();
@@ -56,7 +62,8 @@ public class SiteEditTest extends BaseSetup {
     }
 
     @Test
-    public void t7EditSitePrimaryInformation() throws InterruptedException, AWTException {
+    @Order(6)
+    public void t6EditSitePrimaryInformation() throws InterruptedException, AWTException {
 
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
@@ -79,6 +86,7 @@ public class SiteEditTest extends BaseSetup {
     }
 
     @Test
+    @Order(7)
     public void t7EditSitePrimaryInformationWithInvalidDetails() throws AWTException, InterruptedException {
 
         SiteEdit.EditSite.click();
@@ -107,6 +115,7 @@ public class SiteEditTest extends BaseSetup {
 
     }
     @Test
+    @Order(8)
     public void t8AddCustomerInformation(){
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
@@ -119,6 +128,7 @@ public class SiteEditTest extends BaseSetup {
 
     }
     @Test
+    @Order(9)
     public void t9SuccessMessageShouldGetAppearAfterCustomerInfoIsAdded() throws InterruptedException {
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
@@ -133,6 +143,7 @@ public class SiteEditTest extends BaseSetup {
 
     }
     @Test
+    @Order(10)
     public void t10AddCustomerInformationWithInvalidDetails(){
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
@@ -149,6 +160,7 @@ public class SiteEditTest extends BaseSetup {
         SiteEdit.ErrorTooltipMessage.shouldBe(visible);
     }
     @Test
+    @Order(11)
     public void t11PasswordFieldShouldBeVisibleAfterSetSitePasswordISClicked() throws InterruptedException {
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
@@ -158,6 +170,7 @@ public class SiteEditTest extends BaseSetup {
         SiteEdit.Password.shouldBe(visible);
     }
     @Test
+    @Order(12)
     public void t12PasswordFieldShouldBeDisappearAfterSetSitePasswordIsClickedTwice() throws InterruptedException {
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
@@ -167,6 +180,7 @@ public class SiteEditTest extends BaseSetup {
         SiteEdit.Password.shouldBe(disappear);
     }
     @Test
+    @Order(13)
     public void t13SetSitePassword() throws InterruptedException {
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
@@ -176,6 +190,7 @@ public class SiteEditTest extends BaseSetup {
         SiteEdit.Password.sendKeys("1234");
     }
     @Test
+    @Order(14)
     public void t14ViewTheSetSitePassword() throws InterruptedException {
         SiteEdit.EditSite.click();
         SiteEdit.SiteInformation.click();
