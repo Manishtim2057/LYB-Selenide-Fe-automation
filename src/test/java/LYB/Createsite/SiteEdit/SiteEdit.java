@@ -21,6 +21,8 @@ public class SiteEdit {
 
 
     public static SelenideElement SecondaryColor = $x("//*[@id=\"secondary_color\"]");
+
+    public static SelenideElement Search = $x("/html/body/app-root/admin-root/section/div/section/div/app-sites/div/section/app-sites-list/section[1]/app-advanced-search/div/div[1]/input");
     public static SelenideElement SecondaryColorInput = $x("//*[@id=\"site-edit-form\"]/accordion/accordion-group[1]/div/div[2]/div/div[5]/color-picker/div/div[7]/div[1]/input");
     public static SelenideElement SecondaryColorOK = $x("//*[@id=\"site-edit-form\"]/accordion/accordion-group[1]/div/div[2]/div/div[5]/color-picker/div/div[9]/button");
     public static SelenideElement SiteDescription = $x("//*[@id=\"description\"]");
@@ -43,6 +45,17 @@ public class SiteEdit {
     public static SelenideElement Password = $x("//*[@id=\"password\"]");
     public static SelenideElement EyeSlash = $x("//*[@id=\"password\"]");
 
+ ////Site Video Buckets////
+     public static  SelenideElement AssignBuckets = $(".add-resource");
+     public static SelenideElement SiteVideoBuckets = $(".side-nav .navbar-nav .nav-item:nth-of-type(3)");
+     public static  SelenideElement UnAssignBuckets = $(".remove-resource");
+     public static  SelenideElement AvailableVideos = $(".no-data-block:nth-of-type(2)");
+     public static  SelenideElement SelectedBuckets = $(".no-data-block:nth-of-type(1)");
+     public static  SelenideElement SelectedBucketsBlock = $(".bucket-card:nth-of-type(2) .bucket-block");
+     public static  SelenideElement AvailableVideoBlock = $(".video-container");
+     public static  SelenideElement SiteVideoBucketsPage = $(".component-title-block h2");
+
+    public static SelenideElement ConfirmCancel = $(".modal-footer > *.btn-secondary");
 
 
 

@@ -1,10 +1,7 @@
 package LYB.Createsite.SiteEdit;
 
 import LYB.Base.BaseSetup;
-import LYB.Createsite.AdvanceForm.AdvanceSite;
-import LYB.Createsite.Site;
 import LYB.FileUpload.FileUpload;
-import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.*;
 
 import java.awt.*;

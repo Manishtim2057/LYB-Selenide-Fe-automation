@@ -18,7 +18,7 @@ public class BaseSetup {
 
     public static void login() throws InterruptedException {
         open("http://localhost:4200/auth/login");
-        Thread.sleep(500);
+        Thread.sleep(1000);
         login.username.sendKeys("superuser@learnyourbenefits.com");
         login.password.sendKeys("lyb@20!9");
         Thread.sleep(1000);
@@ -31,7 +31,7 @@ public class BaseSetup {
 
         SelenideLogger.addListener("allure", new AllureSelenide());
         BaseSetup.login();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         new ZoomOut();
     }
 }
