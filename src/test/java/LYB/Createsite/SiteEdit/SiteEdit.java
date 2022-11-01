@@ -54,8 +54,20 @@ public class SiteEdit {
      public static  SelenideElement SelectedBucketsBlock = $(".bucket-card:nth-of-type(2) .bucket-block");
      public static  SelenideElement AvailableVideoBlock = $(".video-container");
      public static  SelenideElement SiteVideoBucketsPage = $(".component-title-block h2");
+     public static SelenideElement ConfirmCancel = $(".modal-footer > *.btn-secondary");
 
-    public static SelenideElement ConfirmCancel = $(".modal-footer > *.btn-secondary");
+ /////Site Global Videos//////
+
+    public static SelenideElement AssignVideo = $(".video-container .video-action");
+
+    public static SelenideElement SiteGlobalVideos = $(".side-nav .navbar-nav .nav-item:nth-of-type(4)");
+
+    public static SelenideElement UnAssignVideo = $("a i.remove-form-bucket");
+
+    public static SelenideElement EmptyVideoPlaylist = $(".no-data-block");
+
+    public static SelenideElement Videos = $(".component-title-block");
+    public static SelenideElement VideoList = $x("//*[@id=\"video-library-container\"]/div[2]/div[1]/app-video-item");
 
 
 
