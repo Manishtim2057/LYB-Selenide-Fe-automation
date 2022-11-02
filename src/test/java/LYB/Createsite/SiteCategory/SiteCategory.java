@@ -46,10 +46,38 @@ public class SiteCategory {
 
     public static SelenideElement MoveCategoryModel = $(".modal-content");
     public static SelenideElement CategoryCard = $(".panel");
+    public static SelenideElement NewDocument = $(".btn-secondary");
     public static SelenideElement UnpublishedColor = $(".circular-status-indicator.unpublished");
 
     public static SelenideElement PublishedColor = $(".circular-status-indicator.published");
 //    public static SelenideElement Confirm = $(".modal-footer .btn-secondary");
     public static SelenideElement Cancel = $(".modal-footer .btn");
-   public static SelenideElement Close = $x("//*[@id=\"nico-modal-body\"]/app-move-category-modal/div[1]/button");
+   public static SelenideElement Close = $(".modal .custom-icon-button");
+   public static SelenideElement CategoryVideos = $(".panel .nav-item:nth-of-type(1)");
+   public static SelenideElement CategoryDocuments = $(".panel .nav-item:nth-of-type(2)");
+   public static SelenideElement CategoryContacts = $(".panel .nav-item:nth-of-type(3)");
+   public static SelenideElement CategoryLinks = $(".panel .nav-item:nth-of-type(4)");
+   public static SelenideElement CategoryCalculators = $(".panel .nav-item:nth-of-type(5)");
+   public static SelenideElement SingleDocument = $(".dropdown-menu li:nth-of-type(1)");
+   public static SelenideElement MultipleDocument = $(".dropdown-menu li:nth-of-type(2)");
+
+   public static SelenideElement NewContact = $(".btn-secondary");
+   public static SelenideElement CategoryContactFlyout = $(".resource-card .custom-icon-button");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

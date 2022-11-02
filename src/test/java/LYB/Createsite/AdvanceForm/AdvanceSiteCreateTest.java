@@ -155,7 +155,7 @@ public class AdvanceSiteCreateTest extends BaseSetup {
     public void AddContact() throws AWTException, InterruptedException {
         AdvanceSite.NewContact.click();
         AdvanceSite.ContactTypeDropDown.click();
-        AdvanceSite.ContactType.click();
+        AdvanceSite.ContactType1.click();
         AdvanceSite.ContactTitle.sendKeys("Sample");
         AdvanceSite.ContactEmail.sendKeys("Lorem@gmail.com");
         AdvanceSite.ContactDescription.setValue("Lorem");
@@ -757,7 +757,7 @@ public class AdvanceSiteCreateTest extends BaseSetup {
         AddVideos();
         AdvanceSite.NewContact.click();
         AdvanceSite.ContactTypeDropDown.click();
-        AdvanceSite.ContactType.click();
+        AdvanceSite.ContactType1.click();
         AdvanceSite.ContactTitle.sendKeys("Sample");
         AdvanceSite.ContactEmail.sendKeys("adasdasdasdasdasdsadsadsad");
         AdvanceSite.ContactDescription.sendKeys("Dirt");
@@ -818,7 +818,10 @@ public class AdvanceSiteCreateTest extends BaseSetup {
         AddVideos();
         AddContact();
         AdvanceSite.ContactFlyout.click();
+        Thread.sleep(1000);
         AdvanceSite.ContactRemove.click();
+        Thread.sleep(1000);
+        AdvanceSite.ConfirmCancel.click();
         Thread.sleep(500);
         CancelButton();
 

@@ -32,7 +32,7 @@ public class SiteGlobalVideos extends BaseSetup {
         Thread.sleep(500);
         SiteEdit.SiteGlobalVideos.click();
         Thread.sleep(500);
-        SiteEdit.Videos.shouldBe(visible);
+        SiteEdit.Title.shouldBe(visible);
 
     }
     @Test

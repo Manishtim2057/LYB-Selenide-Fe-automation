@@ -113,7 +113,7 @@ public class AdvanceSite {
     public static SelenideElement AddDocument = $(".upload-resource-block .dnd-text .link");
     public static SelenideElement DocumentTitle = $("input#title");
     public static SelenideElement DocumentIcon = $("#icon > div > div");
-    public static SelenideElement DocumentIconOption1 = $(".dropdown.open .dropdown-menu .fa-file-word far");
+    public static SelenideElement DocumentIconOption = $(".dropdown-menu li:nth-of-type(3)");
     public static SelenideElement DocumentDescription = $("textarea.form-control, textarea.custom-select");
 
     public static SelenideElement DocumentList = $(".adv-site-create-container .steps .card");
@@ -133,9 +133,13 @@ public class AdvanceSite {
     public static SelenideElement ContactThumbnail = $("#thumbnail_url.custom-file");
     public static SelenideElement NewContact = $(byText("New contact"));
     public static SelenideElement ContactTypeDropDown = $x("//*[@id=\"contact_type\"]");
-    public static SelenideElement ContactType = $x("//*[@id=\"contact_type\"]/option[1]");
+    public static SelenideElement ContactType1 = $x("//*[@id=\"contact_type\"]/option[1]");
+    public static SelenideElement ContactType2 = $x("//*[@id=\"contact_type\"]/option[2]");
+    public static SelenideElement ContactType3 = $x("//*[@id=\"contact_type\"]/option[3]");
     public static SelenideElement ContactTitle = $x("//*[@id=\"title\"]");
     public static SelenideElement ContactEmail = $x("//*[@id=\"value\"]");
+    public static SelenideElement ContactPhone = $x("//*[@id=\"value\"]");
+    public static SelenideElement ContactAddress = $x("//*[@id=\"value\"]");
     public static SelenideElement ContactDescription = $x("//*[@id=\"description\"]");
 
 
