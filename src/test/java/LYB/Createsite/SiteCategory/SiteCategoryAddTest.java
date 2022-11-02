@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
 
-public class SiteCategoryTest extends BaseSetup {
+public class SiteCategoryAddTest extends BaseSetup {
     TestMethodOrder Ascending;
 
     @BeforeEach
