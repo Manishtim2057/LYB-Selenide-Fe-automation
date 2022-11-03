@@ -62,10 +62,41 @@ public class SiteCategory {
    public static SelenideElement MultipleDocument = $(".dropdown-menu li:nth-of-type(2)");
 
    public static SelenideElement NewContact = $(".btn-secondary");
+   public static SelenideElement DocumentCard = $(".resource-card");
    public static SelenideElement CategoryContactFlyout = $(".resource-card .custom-icon-button");
+/////////////////Multiple Document////////////////////////////////
 
+    public static SelenideElement MulDocumentTitle1 =$x(" //*[@id=\"data.0.title\"]");
+    public static SelenideElement MulDocumentTitle2 =$x("//*[@id=\"data.1.title\"]");
+    public static SelenideElement MulDocumentTitle3 =$x("//*[@id=\"data.2.title\"]");
+    public static SelenideElement MulDocumentDesc1 =$x("//*[@id=\"data.0.description\"]");
+    public static SelenideElement MulDocumentDesc2 =$x("//*[@id=\"data.1.description\"]");
+    public static SelenideElement MulDocumentDesc3 =$x("//*[@id=\"data.2.description\"]");
+    public static SelenideElement MulDocumentThumbnail1 =$x("//*[@id=\"0\"]/app-upload-thumbnail-image/div/div[2]/label");
+    public static SelenideElement MulDocumentThumbnail2 =$x("//*[@id=\"1\"]/app-upload-thumbnail-image/div/div[2]/label");
+    public static SelenideElement MulDocumentThumbnail3 =$x("//*[@id=\"2\"]/app-upload-thumbnail-image/div/div[2]/label");
+    public static SelenideElement MulDocumentStatus1 =$x("//*[@id=\"data.0.status\"]");
+    public static SelenideElement MulDocumentStatus2 =$x("//*[@id=\"data.1.status\"]");
+    public static SelenideElement MulDocumentStatus3 =$x("//*[@id=\"data.2.status\"]");
+    public static SelenideElement MulDocumentRemove1 =$x("//*[@id=\"multi-document-field\"]/table/tr[2]/td[7]/button");
+    public static SelenideElement MulDocumentRemove2 =$x("//*[@id=\"multi-document-field\"]/table/tr[3]/td[7]/button");
+    public static SelenideElement MulDocumentRemove3 =$x("//*[@id=\"multi-document-field\"]/table/tr[4]/td[7]/button");
+    public static SelenideElement MulDocumentIcon1 =$x("//*[@id=\"data.0.icon\"]/div/div");
+    public static SelenideElement MulDocumentIcon2 =$x("//*[@id=\"data.1.icon\"]/div/div");
+    public static SelenideElement MulDocumentIcon3 =$x("//*[@id=\"data.2.icon\"]/div/div");
+    public static SelenideElement MulDocumentIconOption1=$x("//*[@id=\"data.0.icon\"]/div/ul/li[3]");
+    public static SelenideElement MulDocumentIconOption2 =$x("//*[@id=\"data.1.icon\"]/div/ul/li[3]");
+    public static SelenideElement MulDocumentIconOption3 =$x("//*[@id=\"data.2.icon\"]/div/ul/li[3]");
 
-
+    public static SelenideElement MulDocument1Published =$x("//*[@id=\"data.0.status\"]/option[1]");
+    public static SelenideElement MulDocument1Unpublished =$x("//*[@id=\"data.0.status\"]/option[2]");
+    public static SelenideElement MulDocument2Unpublished =$x("//*[@id=\"data.1.status\"]/option[1]");
+    public static SelenideElement MulDocument2Published =$x("//*[@id=\"data.1.status\"]/option[2]");
+    public static SelenideElement MulDocument3Unpublished =$x("//*[@id=\"data.1.status\"]/option[1]");
+    public static SelenideElement MulDocument3Published =$x("//*[@id=\"data.1.status\"]/option[2]");
+    public static SelenideElement SaveButton =$(".modal-footer .btn-secondary");
+    public static SelenideElement CancelButton =$(".modal-footer .btn");
+    public static SelenideElement AddNewDocumentButton =$x("//*[@id=\"multi-document-field\"]/div/button");
 
 
 
