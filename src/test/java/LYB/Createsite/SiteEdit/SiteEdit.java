@@ -67,6 +67,7 @@ public class SiteEdit {
     public static SelenideElement EmptyVideoPlaylist = $(".no-data-block");
 
     public static SelenideElement Title = $(".component-title-block");
+    public static SelenideElement BucketVal = $(".card:nth-of-type(2) .section-header");
     public static SelenideElement VideoList = $x("//*[@id=\"video-library-container\"]/div[2]/div[1]/app-video-item");
 
 

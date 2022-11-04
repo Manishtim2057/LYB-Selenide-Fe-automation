@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class CategoryContact_Add_Edit extends BaseSetup {
+public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
     TestMethodOrder Ascending;
 
     @BeforeEach
@@ -447,7 +447,27 @@ public class CategoryContact_Add_Edit extends BaseSetup {
     }
     @Test
     @Order(17)
-    public void t17RemoveTheCategoryContact() throws InterruptedException, AWTException {
+    public void t17SuccessMessageShouldBeVisibleAfterChangingCategoryContactStatus() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryContacts.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryContactFlyout.click();
+        Thread.sleep(1000);
+        SiteCategory.UnPublishCategory.click();
+        Thread.sleep(1000);
+        AdvanceSite.SuccessMessage.click();
+
+    }
+    @Test
+    @Order(18)
+    public void t18RemoveTheCategoryContact() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -466,8 +486,8 @@ public class CategoryContact_Add_Edit extends BaseSetup {
 
     }
     @Test
-    @Order(18)
-    public void t18CancelTheProcessOfRemovingCategoryContact() throws InterruptedException, AWTException {
+    @Order(19)
+    public void t19CancelTheProcessOfRemovingCategoryContact() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -486,8 +506,8 @@ public class CategoryContact_Add_Edit extends BaseSetup {
 
     }
     @Test
-    @Order(19)
-    public void t19MoveCategoryContactPanelShouldGetAppearAfterMoveOptionIsClicked() throws InterruptedException, AWTException {
+    @Order(20)
+    public void t21MoveCategoryContactPanelShouldGetAppearAfterMoveOptionIsClicked() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -507,8 +527,8 @@ public class CategoryContact_Add_Edit extends BaseSetup {
     }
 
     @Test
-    @Order(20)
-    public void t20MoveCategoryContactWithChoosingTheCategory() throws InterruptedException, AWTException {
+    @Order(21)
+    public void t21MoveCategoryContactWithChoosingTheCategory() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -534,8 +554,8 @@ public class CategoryContact_Add_Edit extends BaseSetup {
     }
 
     @Test
-    @Order(21)
-    public void t21CancelCategoryContactMovingProcedure() throws InterruptedException, AWTException {
+    @Order(22)
+    public void t22CancelCategoryContactMovingProcedure() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -560,8 +580,8 @@ public class CategoryContact_Add_Edit extends BaseSetup {
 
     }
     @Test
-    @Order(22)
-    public void t22CloseTheCategoryContactMovePanelsWithoutSaving() throws InterruptedException, AWTException {
+    @Order(23)
+    public void t23CloseTheCategoryContactMovePanelsWithoutSaving() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -580,9 +600,5 @@ public class CategoryContact_Add_Edit extends BaseSetup {
         Thread.sleep(1000);
         SiteCategory.Close.click();
     }
-
-
-
-
 
 }

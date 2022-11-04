@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class CategoryDocument extends BaseSetup {
+public class CategoryDocument_Single_Multiple_Add_Edit_Status_Move_Remove extends BaseSetup {
     TestMethodOrder Ascending;
 
     @BeforeEach
@@ -96,11 +96,57 @@ public class CategoryDocument extends BaseSetup {
         AdvanceSite.Published.click();
         Thread.sleep(500);
         AdvanceSite.SaveButton.click();
+        Thread.sleep(500);
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+    }
+    @Test
+    @Order(3)
+    public void t3SuccessMessageShouldBeVisibleAfterAddingDocumentWithValidDetails() throws InterruptedException, AWTException {
+
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        SiteCategory.NewDocument.click();
+        Thread.sleep(1000);
+        SiteCategory.SingleDocument.click();
+        Thread.sleep(1000);
+        AdvanceSite.AddDocument.click();
+        Thread.sleep(1000);
+        UploadDocument();
+        Thread.sleep(500);
+        AdvanceSite.DocumentTitle.clear();
+        AdvanceSite.DocumentTitle.sendKeys("Doc");
+        AdvanceSite.DocumentIcon.click();
+        AdvanceSite.DocumentIconOption.click();
+        AdvanceSite.DocumentDescription.sendKeys("Desc");
+        Thread.sleep(1000);
+        AdvanceSite.DocumentThumbnail.click();
+        Thread.sleep(1000);
+        String filepath = "C:\\Users\\Ensue\\Pictures\\Saved Pictures\\kindpng_1300250.png";
+        new FileUpload(filepath);
+        Thread.sleep(1000);
+        AdvanceSite.Done.click();
+        Thread.sleep(2000);
+        AdvanceSite.StatusDropDown.click();
+        Thread.sleep(500);
+        AdvanceSite.Published.click();
+        Thread.sleep(500);
+        AdvanceSite.SaveButton.click();
+        Thread.sleep(500);
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+
     }
 
     @Test
-    @Order(3)
-    public void t3DocumentCardShouldBeVisibleAfterAddingTheDocument() throws InterruptedException, AWTException {
+    @Order(4)
+    public void t4DocumentCardShouldBeVisibleAfterAddingTheDocument() throws InterruptedException, AWTException {
 
         Search();
         Thread.sleep(1000);
@@ -143,8 +189,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(4)
-    public void t4SaveButtonShouldBeDisabledAfterInvalidDetailIsAdded() throws InterruptedException, AWTException {
+    @Order(5)
+    public void t5SaveButtonShouldBeDisabledAfterInvalidDetailIsAdded() throws InterruptedException, AWTException {
 
         Search();
         Thread.sleep(1000);
@@ -170,8 +216,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(5)
-    public void t5TooltipErrorMessageShouldBeVisibleAfterAddingInvalidDetails() throws InterruptedException, AWTException {
+    @Order(6)
+    public void t6TooltipErrorMessageShouldBeVisibleAfterAddingInvalidDetails() throws InterruptedException, AWTException {
 
         Search();
         Thread.sleep(1000);
@@ -197,8 +243,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(6)
-    public void t6TooltipErrorMessageShouldBeVisibleAfterAddingInvalidThumbnail() throws InterruptedException, AWTException {
+    @Order(7)
+    public void t7TooltipErrorMessageShouldBeVisibleAfterAddingInvalidThumbnail() throws InterruptedException, AWTException {
 
 
         Search();
@@ -238,8 +284,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(7)
-    public void t7ErrorMessageShouldGetAppearAfterAddingInvalidDocuments() throws AWTException, InterruptedException {
+    @Order(8)
+    public void t8ErrorMessageShouldGetAppearAfterAddingInvalidDocuments() throws AWTException, InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -263,8 +309,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(8)
-    public void t8MultipleDocumentAddModelShouldBeVisible() throws AWTException, InterruptedException {
+    @Order(9)
+    public void t9MultipleDocumentAddModelShouldBeVisible() throws AWTException, InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -287,8 +333,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(9)
-    public void t9AddMultipleDocumentWithAllValidCredentials() throws AWTException, InterruptedException {
+    @Order(10)
+    public void t10AddMultipleDocumentWithAllValidCredentials() throws AWTException, InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -348,8 +394,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(10)
-    public void t10AddMultipleDocumentFormShouldGetCanceledAfterClickingOnCancelButton() throws AWTException, InterruptedException {
+    @Order(11)
+    public void t11AddMultipleDocumentFormShouldGetCanceledAfterClickingOnCancelButton() throws AWTException, InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -368,12 +414,13 @@ public class CategoryDocument extends BaseSetup {
         new FileUpload(filepath);
         Thread.sleep(1000);
         SiteCategory.CancelButton.click();
+        SiteCategory.CategoryTitle.shouldBe(visible);
 
     }
 
     @Test
-    @Order(11)
-    public void t11ErrorMessageShouldBeVisibleAndSaveButtonShouldBeDisabledAfterAddingInvalidDocument() throws AWTException, InterruptedException {
+    @Order(12)
+    public void t12ErrorMessageShouldBeVisibleAndSaveButtonShouldBeDisabledAfterAddingInvalidDocument() throws AWTException, InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -435,8 +482,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(12)
-    public void t12ErrorMessageShouldBeVisibleAfterAddingTitleAsUpperLimit() throws AWTException, InterruptedException {
+    @Order(13)
+    public void t13ErrorMessageShouldBeVisibleAfterAddingTitleAsUpperLimit() throws AWTException, InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -499,8 +546,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(13)
-    public void t13ErrorMessageShouldBeVisibleAfterAddingInvalidThumbnail() throws AWTException, InterruptedException {
+    @Order(14)
+    public void t14ErrorMessageShouldBeVisibleAfterAddingInvalidThumbnail() throws AWTException, InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -544,8 +591,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(14)
-    public void t14RemoveTheSelectedDocument() throws AWTException, InterruptedException {
+    @Order(15)
+    public void t15RemoveTheSelectedDocument() throws AWTException, InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -566,12 +613,16 @@ public class CategoryDocument extends BaseSetup {
         SiteCategory.MulDocumentRemove1.click();
         SiteCategory.MulDocumentRemove1.click();
         SiteCategory.MulDocumentRemove1.click();
+        Thread.sleep(1000);
         SiteCategory.CategoryTitle.shouldBe(visible);
+        Thread.sleep(500);
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+
     }
 
     @Test
-    @Order(15)
-    public void t15AddNewDocumentPanelShouldGetAppearAfterClickingAddNewDocButton() throws AWTException, InterruptedException {
+    @Order(16)
+    public void t16AddNewDocumentPanelShouldGetAppearAfterClickingAddNewDocButton() throws AWTException, InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -597,8 +648,8 @@ public class CategoryDocument extends BaseSetup {
     }
 ////////////////Edit Category Document///////////////////////
     @Test
-    @Order(16)
-    public void t16EditCategoryDocumentModelShouldBeVisibleAfterEditOptionIsClicked() throws InterruptedException {
+    @Order(17)
+    public void t17EditCategoryDocumentModelShouldBeVisibleAfterEditOptionIsClicked() throws InterruptedException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -616,8 +667,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(17)
-    public void t17EditDocumentWithAllValidDetails() throws InterruptedException, AWTException {
+    @Order(18)
+    public void t18EditDocumentWithAllValidDetails() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -654,8 +705,49 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(18)
-    public void t18EditDocumentWithInvalidDocType() throws InterruptedException, AWTException {
+    @Order(19)
+    public void t19SuccessMessageShouldBeVisibleAfterEditingDocumentWithValidDetails() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        AdvanceSite.DocumentEdit.click();
+        Thread.sleep(1000);
+        UploadDocument();
+        Thread.sleep(500);
+        AdvanceSite.DocumentTitle.clear();
+        AdvanceSite.DocumentTitle.sendKeys("Doc");
+        AdvanceSite.DocumentIcon.click();
+        $x("//*[@id=\"icon\"]/div/ul/li[3]").click();
+        AdvanceSite.DocumentDescription.sendKeys("Desc");
+        Thread.sleep(1000);
+        AdvanceSite.DocumentThumbnail.click();
+        Thread.sleep(1000);
+        String filepath = "C:\\Users\\Ensue\\Pictures\\Saved Pictures\\kindpng_1300250.png";
+        new FileUpload(filepath);
+        Thread.sleep(1000);
+        AdvanceSite.Done.click();
+        Thread.sleep(2000);
+        AdvanceSite.StatusDropDown.click();
+        Thread.sleep(500);
+        AdvanceSite.Published.click();
+        Thread.sleep(500);
+        AdvanceSite.SaveButton.click();
+        Thread.sleep(1000);
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+
+    }
+
+    @Test
+    @Order(20)
+    public void t20EditDocumentWithInvalidDocType() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -678,8 +770,8 @@ public class CategoryDocument extends BaseSetup {
 
 
     @Test
-    @Order(19)
-    public void t19EditDocumentWithTitleUpperlimit() throws InterruptedException, AWTException {
+    @Order(21)
+    public void t21EditDocumentWithTitleUpperLimit() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -703,8 +795,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(20)
-    public void t20EditDocumentWithInvalidThumbnailType() throws InterruptedException, AWTException {
+    @Order(22)
+    public void t22EditDocumentWithInvalidThumbnailType() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -736,8 +828,8 @@ public class CategoryDocument extends BaseSetup {
     }
 
     @Test
-    @Order(21)
-    public void t21EditDocumentWithUnpublishedStatus() throws InterruptedException, AWTException {
+    @Order(23)
+    public void t23EditDocumentWithUnpublishedStatus() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -771,6 +863,233 @@ public class CategoryDocument extends BaseSetup {
         AdvanceSite.Unpublished.click();
         Thread.sleep(500);
         AdvanceSite.SaveButton.click();
+        Thread.sleep(1000);
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+
 
     }
+    @Test
+    @Order(24)
+    public void t24ChangeStatusOfDocument() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.DocStatusPub.click();
+        Thread.sleep(1000);
+
+    }
+    @Test
+    @Order(25)
+    public void t25SuccessMessageShouldBeVisibleAfterChangingStatusOfDocument() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.DocStatusPub.click();
+        Thread.sleep(1000);
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+
+    }
+    @Test
+    @Order(26)
+    public void t26RemoveDocument() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.RemoveCategory.click();
+        Thread.sleep(1000);
+
+    }
+    @Test
+    @Order(27)
+    public void t27SuccessMessageShouldBeVisibleAfterTheRemoveDocumentAction() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.RemoveCategory.click();
+        Thread.sleep(1000);
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+    }
+    @Test
+    @Order(28)
+    public void t28CancelDocumentRemoveProcess() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.RemoveCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.Cancel.click();
+        Thread.sleep(1000);
+
+    }
+
+    @Test
+    @Order(29)
+    public void t29MoveCategoryDocumentPanelShouldGetAppearAfterMoveOptionIsClicked() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategoryModel.shouldBe(visible);
+
+    }
+
+    @Test
+    @Order(30)
+    public void t30MoveDocumentContactWithChoosingTheCategory() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategoryModel.shouldBe(visible);
+        Thread.sleep(1000);
+        SiteCategory.MoveCategoryDropDown.click();
+        Thread.sleep(1000);
+        SiteCategory.SelectedCategory.click();
+        Thread.sleep(1000);
+        AdvanceSite.SaveButton.click();
+
+    }
+    @Test
+    @Order(31)
+    public void t31SuccessMessageShouldGetAppearAfterMovingTheDocument() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategoryModel.shouldBe(visible);
+        Thread.sleep(1000);
+        SiteCategory.MoveCategoryDropDown.click();
+        Thread.sleep(1000);
+        SiteCategory.SelectedCategory.click();
+        Thread.sleep(1000);
+        AdvanceSite.SaveButton.click();
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+
+    }
+
+    @Test
+    @Order(32)
+    public void t32CancelCategoryDocumentMovingProcedure() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategoryModel.shouldBe(visible);
+        Thread.sleep(1000);
+        SiteCategory.MoveCategoryDropDown.click();
+        Thread.sleep(1000);
+        SiteCategory.SelectedCategory.click();
+        Thread.sleep(1000);
+        AdvanceSite.Cancel.click();
+        SiteCategory.MoveCategoryModel.shouldNotBe(visible);
+
+    }
+    @Test
+    @Order(33)
+    public void t33CloseTheCategoryContactMovePanelsWithoutSaving() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryDocuments.click();
+        Thread.sleep(1000);
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.MoveCategoryModel.shouldBe(visible);
+        Thread.sleep(1000);
+        SiteCategory.Close.click();
+        SiteCategory.MoveCategoryModel.shouldNotBe(visible);
+    }
+
 }

@@ -2,18 +2,24 @@ package LYB.Createsite.SiteCategory;
 
 import LYB.Base.BaseSetup;
 import LYB.Createsite.AdvanceForm.AdvanceSite;
+import LYB.Createsite.Site;
 import LYB.Createsite.SiteEdit.SiteEdit;
+import LYB.FileUpload.FileUpload;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.commands.SelectOptionByValue;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import io.qameta.allure.internal.shadowed.jackson.databind.ser.Serializers;
+import org.apache.hc.client5.http.auth.StandardAuthScheme;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.edge.AddHasCasting;
 
 
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.open;
+import java.awt.*;
+
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class CategoryVideos extends BaseSetup {
+public class CategoryCalculator extends BaseSetup {
     TestMethodOrder Ascending;
 
     @BeforeEach
@@ -21,14 +27,16 @@ public class CategoryVideos extends BaseSetup {
         open("http://localhost:4200/auth/login");
 
     }
-    public void Search(){
+
+    public void Search() {
         SiteEdit.Search.setValue("atmsite");
         SiteEdit.Search.pressEnter();
 
     }
-    @Test
+
+    @Test()
     @Order(1)
-    public void t1VideosPageShouldBeVisibleAfterCategoryVideosIsClicked() throws InterruptedException {
+    public void t42CalculatorPageShouldBeVisibleAfterCalculatorOptionIsClicked() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -37,13 +45,14 @@ public class CategoryVideos extends BaseSetup {
         Thread.sleep(1000);
         SiteCategory.CategoryCard.click();
         Thread.sleep(1000);
-        SiteCategory.CategoryVideos.click();
+        SiteCategory.CategoryCalculators.click();
         Thread.sleep(1000);
         SiteEdit.Title.shouldBe(visible);
+
     }
     @Test
     @Order(2)
-    public void t2AssignAndUnAssignCategoryVideos() throws InterruptedException {
+    public void t43AssignCalculator() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -52,22 +61,16 @@ public class CategoryVideos extends BaseSetup {
         Thread.sleep(1000);
         SiteCategory.CategoryCard.click();
         Thread.sleep(1000);
-        SiteCategory.CategoryVideos.click();
+        SiteCategory.CategoryCalculators.click();
         Thread.sleep(1000);
-        AdvanceSite.AssignVideo.click();
-        Thread.sleep(500);
-        AdvanceSite.SuccessMessage.click();
-        Thread.sleep(500);
-        AdvanceSite.UnAssignVideo.click();
+        AdvanceSite.CalculatorAssign.click();
         Thread.sleep(1000);
-        AdvanceSite.ConfirmCancel.click();
-        Thread.sleep(500);
-        AdvanceSite.SuccessMessage.click();
+        AdvanceSite.SuccessMessage.shouldBe(visible);
 
     }
     @Test
     @Order(3)
-    public void t3VideosPlaylistShouldBeVisibleAfterVideosIsAssigned() throws InterruptedException {
+    public void SuccessMessageShouldBeVisibleAfterCalculatorIsAssigned() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -76,45 +79,56 @@ public class CategoryVideos extends BaseSetup {
         Thread.sleep(1000);
         SiteCategory.CategoryCard.click();
         Thread.sleep(1000);
-        SiteCategory.CategoryVideos.click();
+        SiteCategory.CategoryCalculators.click();
         Thread.sleep(1000);
-        AdvanceSite.AssignVideo.click();
-        Thread.sleep(500);
-        AdvanceSite.SuccessMessage.click();
-        Thread.sleep(500);
-        SiteEdit.VideoList.shouldBe(visible);
-        Thread.sleep(1000);
-        AdvanceSite.UnAssignVideo.click();
-        Thread.sleep(1000);
-        AdvanceSite.ConfirmCancel.click();
-        Thread.sleep(500);
-        AdvanceSite.SuccessMessage.click();
-        Thread.sleep(500);
-
-    }
-    @Test
-    @Order(4)
-    public void t4EmptyVideoPlayListShouldBeVisibleAfterAssignedAllVideoIsUnAssigned() throws InterruptedException {
-        Search();
-        Thread.sleep(1000);
-        SiteEdit.EditSite.click();
-        Thread.sleep(1000);
-        SiteCategory.SiteCategory.click();
-        Thread.sleep(1000);
-        SiteCategory.CategoryCard.click();
-        Thread.sleep(1000);
-        SiteCategory.CategoryVideos.click();
-        Thread.sleep(1000);
-        AdvanceSite.AssignVideo.click();
-        Thread.sleep(500);
-        AdvanceSite.UnAssignVideo.click();
-        SiteEdit.ConfirmCancel.click();
+        AdvanceSite.CalculatorAssign.click();
         Thread.sleep(1000);
         AdvanceSite.SuccessMessage.shouldBe(visible);
-        Thread.sleep(1000);
-        SiteEdit.EmptyVideoPlaylist.is(visible);
-        Thread.sleep(1000);
-        Thread.sleep(500);
 
     }
+
+
+    @Test
+    @Order(5)
+    public void SuccessMessageShouldBeVisibleAfterCalculatorIsUnAssigned() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCalculators.click();
+        Thread.sleep(1000);
+        AdvanceSite.CalculatorUnAssign.click();
+        Thread.sleep(1000);
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+
+    }
+
+    @Test
+    @Order(6)
+    public void SelectedCalculatorMustBeEmptyAfterUnAssigningAllAssignedCalculators() throws InterruptedException, AWTException {
+        Search();
+        Thread.sleep(1000);
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteCategory.SiteCategory.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCard.click();
+        Thread.sleep(1000);
+        SiteCategory.CategoryCalculators.click();
+        Thread.sleep(1000);
+
+        do {
+            AdvanceSite.CalculatorUnAssign.click();
+        } while(SiteCategory.CardContainer.is(empty));
+
+        Thread.sleep(500);
+        AdvanceSite.SuccessMessage.shouldBe(visible);
+
+    }
+
+
 }

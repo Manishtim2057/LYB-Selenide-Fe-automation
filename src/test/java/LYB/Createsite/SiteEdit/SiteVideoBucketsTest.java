@@ -111,18 +111,18 @@ public class SiteVideoBucketsTest extends BaseSetup {
         UnAssignBuckets();
         Thread.sleep(1000);
     }
-//    @Test
-//    public void t5SelectedBucketsShouldBeUnassigned() throws InterruptedException {
-//        Search();
-//        SiteEdit.EditSite.click();
-//        Thread.sleep(1000);
-//        SiteEdit.SiteVideoBuckets.click();
-//        Thread.sleep(1000);
-//        for(int i=10;i>=1;i--) {
-//            SiteEdit.UnAssignBuckets.click();
-//            SiteEdit.ConfirmCancel.click();
-//        }
-//}
+    @Test
+    public void t5SelectedBucketsShouldBeUnassigned() throws InterruptedException {
+        Search();
+        SiteEdit.EditSite.click();
+        Thread.sleep(1000);
+        SiteEdit.SiteVideoBuckets.click();
+        Thread.sleep(1000);
+        for(int i=10;i>=1;i--) {
+            SiteEdit.UnAssignBuckets.click();
+            SiteEdit.ConfirmCancel.click();
+        }
+}
 
 
     @Test

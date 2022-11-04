@@ -150,7 +150,8 @@ public class AdvanceSite {
     public static SelenideElement ContactEdit = $(".card:nth-of-type(2) #dropdown-custom li:nth-of-type(2)");
     public static SelenideElement ContactRemove = $(".card:nth-of-type(2) #dropdown-custom li:nth-of-type(3)");
 
-    public static SelenideElement AlertMessage = $(".nico-alert .alert-message");
+    public static SelenideElement AlertMessage = $("#nico-toast-container.topRight");
+    public static SelenideElement SuccessMessage = $(".nico-alert .alert-message");
 
 
 

@@ -47,9 +47,9 @@ public class SiteCategory {
     public static SelenideElement MoveCategoryModel = $(".modal-content");
     public static SelenideElement CategoryCard = $(".panel");
     public static SelenideElement NewDocument = $(".btn-secondary");
-    public static SelenideElement UnpublishedColor = $(".circular-status-indicator.unpublished");
+    public static SelenideElement UnpublishedColor = $(".badge-warning");
 
-    public static SelenideElement PublishedColor = $(".circular-status-indicator.published");
+    public static SelenideElement PublishedColor = $(".badge-success");
 //    public static SelenideElement Confirm = $(".modal-footer .btn-secondary");
     public static SelenideElement Cancel = $(".modal-footer .btn");
    public static SelenideElement Close = $(".modal .custom-icon-button");
@@ -62,6 +62,7 @@ public class SiteCategory {
    public static SelenideElement MultipleDocument = $(".dropdown-menu li:nth-of-type(2)");
 
    public static SelenideElement NewContact = $(".btn-secondary");
+   public static SelenideElement NewLink = $(".btn-secondary");
    public static SelenideElement DocumentCard = $(".resource-card");
    public static SelenideElement CategoryContactFlyout = $(".resource-card .custom-icon-button");
 /////////////////Multiple Document////////////////////////////////
@@ -96,11 +97,19 @@ public class SiteCategory {
     public static SelenideElement MulDocument3Published =$x("//*[@id=\"data.1.status\"]/option[2]");
     public static SelenideElement SaveButton =$(".modal-footer .btn-secondary");
     public static SelenideElement CancelButton =$(".modal-footer .btn");
+    public static SelenideElement DocStatusPub =$x("//*[@id=\"dropdown-custom\"]/li[1]/a");
+//    public static SelenideElement  =$x("//*[@id=\"dropdown-custom\"]/li[1]/a");
     public static SelenideElement AddNewDocumentButton =$x("//*[@id=\"multi-document-field\"]/div/button");
 
 
 
 
+/////////////////For If Else////////////
+    public static SelenideElement Status = $(".resource-card nico-status");
+    public static SelenideElement Unpub = $x("//*[@id=\"dropdown-custom\"]/li[1]/a");
+    public static SelenideElement Pub = $(".resource-card nico-status");
+    public static SelenideElement UnStatus = $x("//*[@id=\"uxrm7tjIkl-1395\"]/div[2]/div/nico-status/span");
+    public static SelenideElement CardContainer = $(".resource-card");
 
 
 
