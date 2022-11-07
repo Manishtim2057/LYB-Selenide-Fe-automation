@@ -2,13 +2,9 @@ package LYB.Createsite.SiteCategory.BulkAction;
 
 import LYB.Base.BaseSetup;
 import LYB.Createsite.AdvanceForm.AdvanceSite;
-import LYB.Createsite.AdvanceForm.AdvanceSiteCreateTest;
-import LYB.Createsite.SiteCategory.CategoryCalculator;
 import LYB.Createsite.SiteCategory.SiteCategory;
 import LYB.Createsite.SiteEdit.SiteEdit;
 import LYB.FileUpload.FileUpload;
-import com.codeborne.selenide.conditions.Visible;
-import io.qameta.allure.internal.shadowed.jackson.databind.JsonSerializable;
 import org.junit.jupiter.api.*;
 
 import java.awt.*;

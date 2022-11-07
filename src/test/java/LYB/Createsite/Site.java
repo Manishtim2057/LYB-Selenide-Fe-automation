@@ -45,5 +45,4 @@ public static SelenideElement SaveButton = $x("//*[@id=\"nico-modal-body\"]/app-
 
 
 
-
 }
