@@ -2,6 +2,7 @@ package LYB.Createsite.SiteCategory;
 
 import LYB.Base.BaseSetup;
 import LYB.Createsite.AdvanceForm.AdvanceSite;
+import LYB.Createsite.Site;
 import LYB.Createsite.SiteEdit.SiteEdit;
 import LYB.FileUpload.FileUpload;
 import com.codeborne.selenide.Condition;
@@ -75,9 +76,30 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         Thread.sleep(1000);
         AdvanceSite.ContactSaveButton.click();
     }
+
     @Test
     @Order(3)
-    public void t3SaveButtonShouldBeDisabledAfterInvalidDetailsIsAdded() throws InterruptedException, AWTException {
+    public void t3SearchSpecificDocument(){
+        SiteEdit.Search.setValue("s");
+        SiteEdit.Search.pressEnter();
+    }
+    @Test
+    @Order(4)
+    public void t4UnpublishedListOfDocument(){
+        Site.SortSelect.click();
+        Site.DomainSort.click();
+        Site.UnPublishSortOrder.click();
+    }
+    @Test
+    @Order(5)
+    public void t5PublishedListOfDocument(){
+        Site.SortSelect.click();
+        Site.DomainSort.click();
+        Site.PublishSortOrder.click();
+    }
+    @Test
+    @Order(6)
+    public void t6SaveButtonShouldBeDisabledAfterInvalidDetailsIsAdded() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -99,8 +121,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         AdvanceSite.ContactSaveButton.shouldBe(disabled);
     }
     @Test
-    @Order(4)
-    public void t4ErrorMessageShouldBeVisibleAfterAddingInvalidDetails() throws InterruptedException, AWTException {
+    @Order(7)
+    public void t7ErrorMessageShouldBeVisibleAfterAddingInvalidDetails() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -122,8 +144,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         SiteCategory.ErrorToolTipMessage.shouldBe(visible);
     }
     @Test
-    @Order(5)
-    public void t5ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidEmail() throws InterruptedException, AWTException {
+    @Order(8)
+    public void t8ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidEmail() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -146,8 +168,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         SiteCategory.ErrorToolTipMessage.shouldBe(visible);
     }
     @Test
-    @Order(6)
-    public void t6ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidPhone() throws InterruptedException, AWTException {
+    @Order(9)
+    public void t9ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidPhone() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -170,8 +192,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         SiteCategory.ErrorToolTipMessage.shouldBe(visible);
     }
     @Test
-    @Order(7)
-    public void t7ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidAddress() throws InterruptedException, AWTException {
+    @Order(10)
+    public void t10ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidAddress() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -194,8 +216,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         SiteCategory.ErrorToolTipMessage.shouldBe(visible);
     }
     @Test
-    @Order(8)
-    public void t8ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidThumbnail() throws InterruptedException, AWTException {
+    @Order(11)
+    public void t11ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidThumbnail() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -221,8 +243,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
     }
 
     @Test
-    @Order(9)
-    public void t9AddContactWithUnpublishedStatus() throws InterruptedException, AWTException {
+    @Order(12)
+    public void t12AddContactWithUnpublishedStatus() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -258,8 +280,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
 
     ////////////Edit Contact Category////////////////////////
     @Test
-    @Order(10)
-    public void t10EditContactFormShouldBeVisibleAfterEditOptionIsClicked() throws InterruptedException, AWTException {
+    @Order(13)
+    public void t13EditContactFormShouldBeVisibleAfterEditOptionIsClicked() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -277,8 +299,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         SiteCategory.AddCategoryFrom.shouldBe(visible);
     }
     @Test
-    @Order(11)
-    public void t11EditContactWithALlValidDetails() throws InterruptedException, AWTException {
+    @Order(14)
+    public void t14EditContactWithALlValidDetails() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -312,8 +334,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         AdvanceSite.ContactSaveButton.click();
     }
     @Test
-    @Order(12)
-    public void t12SaveButtonShouldBeDisabledAfterInvalidDetailsIsAdded() throws InterruptedException, AWTException {
+    @Order(15)
+    public void t15SaveButtonShouldBeDisabledAfterInvalidDetailsIsAdded() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -348,8 +370,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         AdvanceSite.ContactSaveButton.shouldBe(disabled);
     }
     @Test
-    @Order(13)
-    public void t13ErrorMessageShouldBeVisibleAfterAddingInvalidDetails() throws InterruptedException, AWTException {
+    @Order(16)
+    public void t16ErrorMessageShouldBeVisibleAfterAddingInvalidDetails() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -372,8 +394,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
         SiteCategory.ErrorToolTipMessage.shouldBe(visible);
     }
     @Test
-    @Order(14)
-    public void t14ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidEmail() throws InterruptedException, AWTException {
+    @Order(17)
+    public void t17ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidEmail() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -398,8 +420,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
     }
 
     @Test
-    @Order(15)
-    public void t15ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidThumbnail() throws InterruptedException, AWTException {
+    @Order(18)
+    public void t18ErrorToolTipMessageShouldBeVisibleAfterAddingInvalidThumbnail() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -427,8 +449,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
     }
 /////////////Category Contact Status Change ////////////////////
     @Test
-    @Order(16)
-    public void t16ChangeTheCategoryContactStatus() throws InterruptedException, AWTException {
+    @Order(19)
+    public void t19ChangeTheCategoryContactStatus() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -446,8 +468,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
 
     }
     @Test
-    @Order(17)
-    public void t17SuccessMessageShouldBeVisibleAfterChangingCategoryContactStatus() throws InterruptedException, AWTException {
+    @Order(20)
+    public void t20SuccessMessageShouldBeVisibleAfterChangingCategoryContactStatus() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -466,8 +488,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
 
     }
     @Test
-    @Order(18)
-    public void t18RemoveTheCategoryContact() throws InterruptedException, AWTException {
+    @Order(21)
+    public void t21RemoveTheCategoryContact() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -486,8 +508,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
 
     }
     @Test
-    @Order(19)
-    public void t19CancelTheProcessOfRemovingCategoryContact() throws InterruptedException, AWTException {
+    @Order(22)
+    public void t22CancelTheProcessOfRemovingCategoryContact() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -506,8 +528,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
 
     }
     @Test
-    @Order(20)
-    public void t21MoveCategoryContactPanelShouldGetAppearAfterMoveOptionIsClicked() throws InterruptedException, AWTException {
+    @Order(23)
+    public void t23MoveCategoryContactPanelShouldGetAppearAfterMoveOptionIsClicked() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -527,8 +549,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
     }
 
     @Test
-    @Order(21)
-    public void t21MoveCategoryContactWithChoosingTheCategory() throws InterruptedException, AWTException {
+    @Order(24)
+    public void t24MoveCategoryContactWithChoosingTheCategory() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -554,8 +576,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
     }
 
     @Test
-    @Order(22)
-    public void t22CancelCategoryContactMovingProcedure() throws InterruptedException, AWTException {
+    @Order(25)
+    public void t25CancelCategoryContactMovingProcedure() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();
@@ -580,8 +602,8 @@ public class CategoryContact_Add_Edit_Status_Move_Remove extends BaseSetup {
 
     }
     @Test
-    @Order(23)
-    public void t23CloseTheCategoryContactMovePanelsWithoutSaving() throws InterruptedException, AWTException {
+    @Order(27)
+    public void t27CloseTheCategoryContactMovePanelsWithoutSaving() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
         SiteEdit.EditSite.click();

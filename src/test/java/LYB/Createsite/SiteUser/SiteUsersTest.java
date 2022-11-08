@@ -2,6 +2,7 @@ package LYB.Createsite.SiteUser;
 
 import LYB.Base.BaseSetup;
 import LYB.Createsite.AdvanceForm.AdvanceSite;
+import LYB.Createsite.Site;
 import LYB.Createsite.SiteCategory.SiteCategory;
 import LYB.Createsite.SiteEdit.SiteEdit;
 import org.junit.jupiter.api.*;
@@ -65,6 +66,70 @@ public class SiteUsersTest extends BaseSetup {
         UsersElements.AssignedUser.click();
         UsersElements.SiteAdminToggle.click();
         SiteCategory.Close.click();
+
+    }
+    @Test
+    @Order(5)
+    public void t5SortSelectByTitleAsc() throws InterruptedException {
+        Site.SortSelect.click();
+        Site.TitleSort.click();
+        Site.AscSortOrder.click();
+
+    }
+    @Test
+    @Order(6)
+    public void t6SortSelectByTitleDesc() throws InterruptedException {
+        Site.SortSelect.click();
+        Site.TitleSort.click();
+        Site.AscSortOrder.click();
+
+    }
+    @Test
+    @Order(7)
+    public void t7SortSelectByDateAsc() throws InterruptedException {
+        Site.SortSelect.click();
+        Site.DateSort.click();
+        Site.AscSortOrder.click();
+
+    }
+    @Test
+    @Order(8)
+    public void t8SortSelectByDateDesc() throws InterruptedException {
+        Site.SortSelect.click();
+        Site.DateSort.click();
+        Site.DescSortOrder.click();
+
+    }
+    @Test
+    @Order(9)
+    public void t9SortSelectByDomainAsc() throws InterruptedException {
+        Site.SortSelect.click();
+        Site.DomainSort.click();
+        Site.AscSortOrder.click();
+
+    }
+    @Test
+    @Order(10)
+    public void t10SortSelectByDomain() throws InterruptedException {
+        Site.SortSelect.click();
+        Site.DomainSort.click();
+        Site.DescSortOrder.click();
+
+    }
+    @Test
+    @Order(11)
+    public void t11SortByPublished() throws InterruptedException {
+        Site.SortSelect.click();
+        Site.DomainSort.click();
+        Site.PublishSortOrder.click();
+
+    }
+    @Test
+    @Order(12)
+    public void t12SortByUnpublished() throws InterruptedException {
+        Site.SortSelect.click();
+        Site.DomainSort.click();
+        Site.UnPublishSortOrder.click();
 
     }
 }

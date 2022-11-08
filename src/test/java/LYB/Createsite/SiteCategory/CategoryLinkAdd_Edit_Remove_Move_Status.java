@@ -102,8 +102,30 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
         AdvanceSite.SuccessMessage.shouldBe(visible);
 
     }
+
+
     @Test
     @Order(3)
+    public void t11SearchSpecificDocument(){
+        SiteEdit.Search.setValue("N");
+        SiteEdit.Search.pressEnter();
+    }
+    @Test
+    @Order(4)
+    public void t12UnpublishedListOfDocument(){
+        Site.SortSelect.click();
+        Site.DomainSort.click();
+        Site.UnPublishSortOrder.click();
+    }
+    @Test
+    @Order(5)
+    public void t13PublishedListOfDocument(){
+        Site.SortSelect.click();
+        Site.DomainSort.click();
+        Site.PublishSortOrder.click();
+    }
+    @Test
+    @Order(6)
     public void AddLinkWithStatusAsPublished() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -134,7 +156,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(4)
+    @Order(7)
     public void ErrorMessageShouldBeVisibleAfterAddingInvalidThumbnailType() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -157,7 +179,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(5)
+    @Order(8)
     public void AddLinkWithTitleUpperLimit() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -177,7 +199,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(6)
+    @Order(9)
     public void EditModelShouldBeVisibleAfterClickingOnEditOption() throws InterruptedException {
         Search();
         Thread.sleep(1000);
@@ -197,7 +219,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(7)
+    @Order(10)
     public void EditLinkWithValidRequireDetailAndSuccessMessageShouldBeVisible() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -231,7 +253,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(8)
+    @Order(11)
     public void EditLinkWithStatusAsPublished() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -265,7 +287,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(9)
+    @Order(12)
     public void ErrorMessageShouldBeVisibleAfterEditingInvalidThumbnailType() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -291,7 +313,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(10)
+    @Order(13)
     public void EditLinkWithTitleUpperLimit() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -314,7 +336,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(11)
+    @Order(14)
     public void ConfirmationPanelShouldBeVisibleAfterClickingRemoveOption() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -335,7 +357,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(12)
+    @Order(15)
     public void CancelLinkRemovingProcess() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -360,7 +382,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(13)
+    @Order(16)
     public void SuccessMessageShouldBeVisibleAfterRemovingAddedDocument() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -384,7 +406,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(14)
+    @Order(17)
     public void SuccessMessageShouldBeVisibleAfterClickingUnpublishedOption() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -429,7 +451,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 //    }
 
     @Test
-    @Order(16)
+    @Order(18)
     public void MoveCategoryContactPanelShouldGetAppearAfterMoveOptionIsClicked() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -450,7 +472,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
     }
 
     @Test
-    @Order(17)
+    @Order(19)
     public void SuccessMessageShouldBeVisibleAfterMovingLink() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -477,7 +499,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
     }
 
     @Test
-    @Order(18)
+    @Order(20)
     public void CancelCategoryContactMovingProcedure() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);
@@ -505,7 +527,7 @@ public class CategoryLinkAdd_Edit_Remove_Move_Status extends BaseSetup {
 
     }
     @Test
-    @Order(19)
+    @Order(21)
     public void CloseTheCategoryContactMovePanelsWithoutSaving() throws InterruptedException, AWTException {
         Search();
         Thread.sleep(1000);

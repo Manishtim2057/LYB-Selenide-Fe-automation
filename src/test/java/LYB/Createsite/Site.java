@@ -41,7 +41,16 @@ public static SelenideElement SaveButton = $x("//*[@id=\"nico-modal-body\"]/app-
 
 
  public static SelenideElement UseAdvanceForm =  $x("//*[@id=\"nico-modal-body\"]/app-create-site-modal/div[3]/a[1]");//User Advance Form button.
-
+////Filter Options//////////////////
+public static SelenideElement SearchBar = $(".options-block .search-input-container");
+public static SelenideElement SortSelect = $(".options-block .sort-container .sort-select");
+public static SelenideElement AscSortOrder = $(".options-block .sort-container .btn-group .btn:nth-of-type(1)");
+public static SelenideElement DescSortOrder = $(".options-block .sort-container .btn-group .btn:nth-of-type(2)");
+public static SelenideElement TitleSort = $x("/html/body/app-root/admin-root/section/div/section/div/app-sites/div/section/app-sites-list/section[1]/app-advanced-search/div/div[2]/select/option[2]");
+public static SelenideElement DateSort = $x("/html/body/app-root/admin-root/section/div/section/div/app-sites/div/section/app-sites-list/section[1]/app-advanced-search/div/div[2]/select/option[1]");
+public static SelenideElement DomainSort = $x("/html/body/app-root/admin-root/section/div/section/div/app-sites/div/section/app-sites-list/section[1]/app-advanced-search/div/div[2]/select/option[3]");
+public static SelenideElement PublishSortOrder = $(".options-block .status-filter .btn:nth-of-type(1)");
+public static SelenideElement UnPublishSortOrder = $(".options-block .status-filter .btn:nth-of-type(2)");
 
 
 
