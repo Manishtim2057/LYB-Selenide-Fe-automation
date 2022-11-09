@@ -2,6 +2,7 @@ package LYB.Createsite.AdvanceForm;
 
 import LYB.Base.BaseSetup;
 
+import LYB.Createsite.SiteCategory.SiteCategory;
 import LYB.FileUpload.FileUpload;
 import LYB.FileUpload.ZoomOut;
 import LYB.Login.LoginTest;
@@ -31,6 +32,20 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
 
 
+    }
+
+    public void Status() throws InterruptedException {
+        if(SiteCategory.Status == text("Unpublished") ) {
+            SiteCategory.Published.click();
+            Thread.sleep(1000);
+            SiteCategory.PublishedColor.shouldBe(visible);
+        }
+        else
+            SiteCategory.Unpub.click();
+        Thread.sleep(500);
+        AdvanceSite.ConfirmCancel.click();
+        Thread.sleep(1000);
+        SiteCategory.UnpublishedColor.shouldBe(visible);
     }
 
     public void openSiteModal() throws InterruptedException {
@@ -318,7 +333,7 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
     @Test
     @Order(11)
-    public void t11AddCategoriesSaveAndNextButtonShouldBeDisabled() throws InterruptedException, AWTException {
+    public void t11SaveAndNextButtonShouldBeDisabledBeforeAddingCategories() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -855,10 +870,149 @@ public class AdvanceSiteCreateTest extends BaseSetup {
         CancelButton();
 
     }
+    @Test
+    @Order(41)
+    public void t41AddLinkWithAllRequiredAndUnpublishedStatus() throws InterruptedException, AWTException {
+        openSiteModal();
+        fillSiteDetails();
+        AddMessageAndChooseVideos();
+        AddCategories();
+        AddVideoBuckets();
+        AddVideos();
+//        AddDocument();
+//        AddContact();
+        AdvanceSite.NewLink.click();
+        AdvanceSite.LinkTitle.sendKeys("NeLInk");
+        AdvanceSite.LinkURl.sendKeys("https://www.youtube.com/");
+        AdvanceSite.LinkThumbnail.click();
+        Thread.sleep(1000);
+        String filepath = "C:\\Users\\Ensue\\Pictures\\Saved Pictures\\kindpng_1300250.png";
+        new FileUpload(filepath);
+        AdvanceSite.Done.click();
+        Thread.sleep(1000);
+        AdvanceSite.StatusDropDown.click();
+        AdvanceSite.Unpublished.click();
+        AdvanceSite.LinkDescription.sendKeys("Lorem");
+        Thread.sleep(1000);
+        AdvanceSite.LinkSaveButton.click();
+        Thread.sleep(1000);
+        CancelButton();
+
+    }
+    @Test
+    @Order(42)
+    public void t42AddLinkWithInvalidThumbnailType() throws InterruptedException, AWTException {
+        openSiteModal();
+        fillSiteDetails();
+        AddMessageAndChooseVideos();
+        AddCategories();
+        AddVideoBuckets();
+        AddVideos();
+//        AddDocument();
+//        AddContact();
+        AdvanceSite.NewLink.click();
+        AdvanceSite.LinkTitle.sendKeys("NeLInk");
+        AdvanceSite.LinkURl.sendKeys("https://www.youtube.com/");
+        AdvanceSite.LinkThumbnail.click();
+        Thread.sleep(1000);
+        String filepath = "C:\\Users\\Ensue\\Pictures\\Saved Pictures\\SEO.pptx";
+        new FileUpload(filepath);
+        SiteCategory.ErrorToolTipMessage.shouldBe(visible);
+
+    }
+    @Test
+    @Order(43)
+    public void t43EditLinkWithValidRequiredDetails() throws InterruptedException, AWTException {
+        openSiteModal();
+        fillSiteDetails();
+        AddMessageAndChooseVideos();
+        AddCategories();
+        AddVideoBuckets();
+        AddVideos();
+//        AddDocument();
+//        AddContact();
+        AdvanceSite.DocumentFlyoutMenu.click();
+        AdvanceSite.DocumentEdit.click();
+        AdvanceSite.LinkTitle.clear();
+        AdvanceSite.LinkTitle.sendKeys("Dash");
+        AdvanceSite.LinkURl.clear();
+        AdvanceSite.LinkURl.sendKeys("https://www.youtube.com/");
+        AdvanceSite.LinkThumbnail.click();
+        Thread.sleep(1000);
+        String filepath = "C:\\Users\\Ensue\\Pictures\\Saved Pictures\\kindpng_1300250.png";
+        new FileUpload(filepath);
+        AdvanceSite.Done.click();
+        Thread.sleep(1000);
+        AdvanceSite.StatusDropDown.click();
+        AdvanceSite.Unpublished.click();
+        AdvanceSite.LinkDescription.clear();
+        AdvanceSite.LinkDescription.sendKeys("Lorem");
+        Thread.sleep(1000);
+        AdvanceSite.LinkSaveButton.click();
+        Thread.sleep(1000);
+        CancelButton();
+    }
+
+    @Test
+    @Order(44)
+    public void t44EditLinkWithInvalidThumbnailType() throws InterruptedException, AWTException {
+        openSiteModal();
+        fillSiteDetails();
+        AddMessageAndChooseVideos();
+        AddCategories();
+        AddVideoBuckets();
+        AddVideos();
+//        AddDocument();
+//        AddContact();
+        AdvanceSite.DocumentFlyoutMenu.click();
+        AdvanceSite.DocumentEdit.click();
+        AdvanceSite.NewLink.click();
+        AdvanceSite.LinkTitle.sendKeys("NeLInk");
+        AdvanceSite.LinkURl.sendKeys("https://www.youtube.com/");
+        AdvanceSite.LinkThumbnail.click();
+        Thread.sleep(1000);
+        String filepath = "C:\\Users\\Ensue\\Pictures\\Saved Pictures\\SEO.pptx";
+        new FileUpload(filepath);
+        SiteCategory.ErrorToolTipMessage.shouldBe(visible);
+
+    }
+
+    @Test
+    @Order(45)
+    public void t45ChangeStatusOfLink() throws InterruptedException, AWTException {
+        openSiteModal();
+        fillSiteDetails();
+        AddMessageAndChooseVideos();
+        AddCategories();
+        AddVideoBuckets();
+        AddVideos();
+//        AddDocument();
+//        AddContact();
+        AdvanceSite.DocumentFlyoutMenu.click();
+        Status();
+
+
+    }
+    @Test
+    @Order(46)
+    public void t46RemoveAddedLink() throws InterruptedException, AWTException {
+        openSiteModal();
+        fillSiteDetails();
+        AddMessageAndChooseVideos();
+        AddCategories();
+        AddVideoBuckets();
+        AddVideos();
+//        AddDocument();
+//        AddContact();
+        AdvanceSite.DocumentFlyoutMenu.click();
+        AdvanceSite.RemoveDocument.click();
+
+
+    }
 
     @Test()
-    @Order(42)
-   public void t42CalculatorPageShouldBeVisible() throws InterruptedException, AWTException {
+    @Order(47)
+   public void t47CalculatorPageShouldBeVisible() throws InterruptedException, AWTException {
        openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -872,8 +1026,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
         CancelButton();
     }
     @Test
-    @Order(43)
-    public void t43AssignCalculator() throws InterruptedException, AWTException {
+    @Order(48)
+    public void t48AssignCalculator() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -891,8 +1045,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
     }
 
     @Test
-    @Order(44)
-    public void t44UnAssignCalculator() throws InterruptedException, AWTException {
+    @Order(49)
+    public void t49UnAssignCalculator() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -911,8 +1065,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
     }
     @Test
-    @Order(45)
-    public void t45PreviewSiteButtonShouldBeClicked() throws InterruptedException, AWTException {
+    @Order(50)
+    public void t50PreviewSiteButtonShouldBeClicked() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -927,8 +1081,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
     }
     @Test
-    @Order(46)
-    public void t46PreviewSiteShouldAppear() throws InterruptedException, AWTException {
+    @Order(51)
+    public void t51PreviewSiteShouldAppear() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -943,8 +1097,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
         CancelButton();
     }
     @Test
-    @Order(47)
-    public void t47MoveToPreviousPageFromPreviewPage() throws InterruptedException, AWTException {
+    @Order(52)
+    public void t52MoveToPreviousPageFromPreviewPage() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -961,8 +1115,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
     }
     @Test
-    @Order(48)
-    public void t48SelectCalculatorPageShouldBeVisibleAfterPreviousButtonIsClicked() throws InterruptedException, AWTException {
+    @Order(53)
+    public void t53SelectCalculatorPageShouldBeVisibleAfterPreviousButtonIsClicked() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -980,8 +1134,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
     }
     @Test
-    @Order(49)
-    public void t49ProcessShouldBecCanceledAfterCancelButtonIsClicked() throws InterruptedException, AWTException {
+    @Order(54)
+    public void t54ProcessShouldBecCanceledAfterCancelButtonIsClicked() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -997,8 +1151,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
     }
 
     @Test
-    @Order(50)
-    public void t50ShouldBeRedirectToTheSitePageAfterCancelButtonIsClicked() throws InterruptedException, AWTException {
+    @Order(55)
+    public void t55ShouldBeRedirectToTheSitePageAfterCancelButtonIsClicked() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -1017,8 +1171,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
     }
     @Test
-    @Order(51)
-    public void t51ContinueButtonShouldBeClicked() throws InterruptedException, AWTException {
+    @Order(56)
+    public void t56ContinueButtonShouldBeClicked() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
@@ -1034,8 +1188,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
     }
     @Test
-    @Order(52)
-    public void t52ShouldRedirectAfterContinueLaterButtonIsClicked() throws InterruptedException, AWTException {
+    @Order(57)
+    public void t57ShouldRedirectAfterContinueLaterButtonIsClicked() throws InterruptedException, AWTException {
         openSiteModal();
         Thread.sleep(1000);
         AdvanceSite.CancelButton.click();
@@ -1043,9 +1197,8 @@ public class AdvanceSiteCreateTest extends BaseSetup {
     }
 
     @Test
-    @Order(53
-    )
-    public void t53SaveTheCreateSite() throws InterruptedException, AWTException {
+    @Order(58)
+    public void t58SaveTheCreateSite() throws InterruptedException, AWTException {
         openSiteModal();
         fillSiteDetails();
         AddMessageAndChooseVideos();
