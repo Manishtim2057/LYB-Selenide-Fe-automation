@@ -287,7 +287,7 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
     @Test
     @Order(8)
-    public void t8ChooseVideoTypeShouldAppearAfterSaveAndNextButtonIsClicked() throws InterruptedException, AWTException {
+    public void t8ChooseVideoTypeShouldBeVisibleAfterSaveAndNextButtonIsClicked() throws InterruptedException, AWTException {
 
         openSiteModal();
         fillSiteDetails();
@@ -295,7 +295,7 @@ public class AdvanceSiteCreateTest extends BaseSetup {
         AdvanceSite.SaveAndNextButton.click();
         AdvanceSite.ChooseVideoType.shouldBe(visible);
         CancelButton();
-        ;
+
 
     }
 

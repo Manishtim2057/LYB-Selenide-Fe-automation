@@ -9,15 +9,13 @@ import LYB.Createsite.SiteEdit.SiteEdit;
 import LYB.Createsite.SiteUser.UsersElements;
 import com.codeborne.selenide.Config;
 import org.apache.commons.io.filefilter.ConditionalFileFilter;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
 public class SiteConfigTest extends BaseSetup {
 

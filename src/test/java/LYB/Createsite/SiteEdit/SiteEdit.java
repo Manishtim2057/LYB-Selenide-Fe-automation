@@ -22,7 +22,7 @@ public class SiteEdit {
 
     public static SelenideElement SecondaryColor = $x("//*[@id=\"secondary_color\"]");
 
-    public static SelenideElement Search = $x("/html/body/app-root/admin-root/section/div/section/div/app-sites/div/section/app-sites-list/section[1]/app-advanced-search/div/div[1]/input");
+    public static SelenideElement Search = $(".form-control");
     public static SelenideElement SecondaryColorInput = $x("//*[@id=\"site-edit-form\"]/accordion/accordion-group[1]/div/div[2]/div/div[5]/color-picker/div/div[7]/div[1]/input");
     public static SelenideElement SecondaryColorOK = $x("//*[@id=\"site-edit-form\"]/accordion/accordion-group[1]/div/div[2]/div/div[5]/color-picker/div/div[9]/button");
     public static SelenideElement SiteDescription = $x("//*[@id=\"description\"]");

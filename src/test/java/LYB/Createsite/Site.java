@@ -51,6 +51,12 @@ public static SelenideElement DateSort = $x("/html/body/app-root/admin-root/sect
 public static SelenideElement DomainSort = $x("/html/body/app-root/admin-root/section/div/section/div/app-sites/div/section/app-sites-list/section[1]/app-advanced-search/div/div[2]/select/option[3]");
 public static SelenideElement PublishSortOrder = $(".options-block .status-filter .btn:nth-of-type(1)");
 public static SelenideElement UnPublishSortOrder = $(".options-block .status-filter .btn:nth-of-type(2)");
+public static SelenideElement UpcomingCamp = $(".options-block .extra-padding .btn:nth-of-type(1)");
+public static SelenideElement RunningCamp = $(".options-block .extra-padding .btn:nth-of-type(2)");
+public static SelenideElement ExpiredCamp = $(".options-block .extra-padding .btn:nth-of-type(3)");
+
+ public static SelenideElement ListView = $(".component-title-block .btn:nth-of-type(2)");
+ public static SelenideElement TileView = $(".component-title-block .btn:nth-of-type(1)");
 
 
 
