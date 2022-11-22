@@ -46,6 +46,32 @@ public class CampaignElements {
     public static SelenideElement Assign = $("i.add-to-bucket");
     public static SelenideElement UnAssign = $("i.remove-form-bucket");
 
+//////////Campaign Edit/////////
+    public static SelenideElement CampaignEdit = $(".card .card-footer a.view-more");
+    public static SelenideElement CampaignInformation = $(".side-nav .navbar-nav .nav-item");
+    public static SelenideElement CampEditBanner = $(".logo-selector");
+    public static SelenideElement CampaignStartDate = $x("//*[@id=\"start_date\"]");
+    public static SelenideElement CampStartMonthSelect = $(".bs-datepicker .bs-media-container .bs-datepicker-body table tr:nth-of-type(4) td:nth-of-type(2)");
+    public static SelenideElement CampStartDateSelect = $(".bs-datepicker .bs-datepicker-body table tr:nth-of-type(2) td:nth-of-type(2)");
+    public static SelenideElement CampEndMonthSelect = $(".bs-datepicker .bs-media-container .bs-datepicker-body table tr:nth-of-type(4) td:nth-of-type(2)");
+
+    public static SelenideElement CampEndDateSelect = $(".bs-datepicker .bs-datepicker-body table tr:nth-of-type(2) td:nth-of-type(5)");
+    public static SelenideElement CampaignEndDate = $x("//*[@id=\"end_date\"]");
+    public static SelenideElement CampaignResources = $(".side-nav .navbar-nav .custom-accordion ");
+    public static SelenideElement CampaignVideo = $(".dnd-accordion.custom-accordion .panel.card .panel-collapse .navbar-nav .nav-item:nth-of-type(1)");
+    public static SelenideElement CampaignDocuments = $(".dnd-accordion.custom-accordion .panel.card .panel-collapse .navbar-nav .nav-item:nth-of-type(2)");
+    public static SelenideElement CampaignContact = $(".dnd-accordion.custom-accordion .panel.card .panel-collapse .navbar-nav .nav-item:nth-of-type(3)");
+    public static SelenideElement CampaignLinks = $(".dnd-accordion.custom-accordion .panel.card .panel-collapse .navbar-nav .nav-item:nth-of-type(4)");
+    public static SelenideElement CampaignSave = $(".side-nav .btn");
+    public static SelenideElement CampaignNewDocument = $(".btn");
+    public static SelenideElement CampaignNewContact = $(".btn");
+    public static SelenideElement CampaignNewLink = $(".btn");
+    public static SelenideElement FlyoutMenu = $(".block-view .custom-icon-button");
+    public static SelenideElement CampStatus = $(".dropdown-menu li:nth-of-type(1)");
+    public static SelenideElement CampRemove = $(".dropdown-menu li:nth-of-type(2)");
+    public static SelenideElement UploadDocument = $(".upload-resource-block .link");
+    public static SelenideElement CampHeader = $x("//*[@id=\"edit-campaign\"]/div[5]/div/quill-editor/div[2]/div[1]");
+    public static SelenideElement CampFooter = $x("//*[@id=\"edit-campaign\"]/div[6]/div/quill-editor/div[2]/div[1]");
 
 
 }

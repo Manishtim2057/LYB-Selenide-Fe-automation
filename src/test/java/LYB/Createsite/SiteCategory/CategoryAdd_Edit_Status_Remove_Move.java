@@ -11,6 +11,7 @@ import java.security.SecureRandom;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Condition.disappear;
 import static com.codeborne.selenide.Selenide.open;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
 
@@ -467,6 +468,7 @@ public class CategoryAdd_Edit_Status_Remove_Move extends BaseSetup {
         SiteCategory.SelectedCategory.click();
         Thread.sleep(1000);
         SiteCategory.Close.click();
+
     }
 
 
