@@ -25,7 +25,7 @@ public class AdvanceSiteCreateTest extends BaseSetup {
 
     @BeforeEach
     public void setUp() throws InterruptedException, AWTException {
-     open("http://localhost:4200/auth/login");
+     open("https://staging.learnyourcare.com/auth/login");
      Thread.sleep(2000);
 
 

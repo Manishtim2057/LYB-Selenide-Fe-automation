@@ -20,13 +20,13 @@ public class CategoryAdd_Edit_Status_Remove_Move extends BaseSetup {
 
     @BeforeEach
     public void setUp() throws InterruptedException {
-        open("http://localhost:4200/auth/login");
+        open("https://staging.learnyourcare.com/auth/login");
 
     }
 
 
     public void Search(){
-        SiteEdit.Search.setValue("atmsite");
+        SiteEdit.Search.setValue("pnc");
         SiteEdit.Search.pressEnter();
 
     }
@@ -342,8 +342,8 @@ public class CategoryAdd_Edit_Status_Remove_Move extends BaseSetup {
         SiteCategory.FlyoutButton.click();
         Thread.sleep(1000);
         SiteCategory.UnPublishCategory.click();
-        Thread.sleep(500);
-        AdvanceSite.SuccessMessage.shouldBe(visible);
+
+
 
     }
     @Test

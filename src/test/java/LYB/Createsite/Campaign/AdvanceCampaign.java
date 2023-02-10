@@ -19,7 +19,7 @@ public class AdvanceCampaign extends BaseSetup {
 
     @BeforeEach
     public void setUp() throws InterruptedException {
-        open("http://localhost:4200/auth/login");
+        open("https://staging.learnyourcare.com/auth/login");
 
     }
 

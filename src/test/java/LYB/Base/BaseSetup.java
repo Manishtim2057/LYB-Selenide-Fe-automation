@@ -17,7 +17,7 @@ public class BaseSetup {
     static BaseButtonVariable login = new BaseButtonVariable();
 
     public static void login() throws InterruptedException {
-        open("http://localhost:4200/auth/login");
+        open("https://staging.learnyourcare.com/auth/login");
         Thread.sleep(1000);
         login.username.sendKeys("superuser@learnyourbenefits.com");
         login.password.sendKeys("lyb@20!9");

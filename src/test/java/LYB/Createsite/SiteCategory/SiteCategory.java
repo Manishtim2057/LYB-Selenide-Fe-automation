@@ -42,14 +42,14 @@ public class SiteCategory {
     public static SelenideElement RemoveCategory = $("#dropdown-custom li:nth-of-type(3)");
     public static SelenideElement MoveCategory = $("#dropdown-custom li:nth-of-type(4)");
     public static SelenideElement MoveCategoryDropDown = $x("//*[@id=\"newCategory\"]");
-    public static SelenideElement SelectedCategory = $x("//*[@id=\"newCategory\"]/option[4]");
+    public static SelenideElement SelectedCategory = $x("//*[@id=\"newCategory\"]/option[2]");
 
     public static SelenideElement MoveCategoryModel = $(".modal-content");
     public static SelenideElement CategoryCard = $(".panel");
     public static SelenideElement NewDocument = $(".btn-secondary");
-    public static SelenideElement UnpublishedColor = $(".badge-warning");
+    public static SelenideElement UnpublishedColor = $(".circular-status-indicator.unpublished");
 
-    public static SelenideElement PublishedColor = $(".badge-success");
+    public static SelenideElement PublishedColor = $(".circular-status-indicator.published");
 //    public static SelenideElement Confirm = $(".modal-footer .btn-secondary");
     public static SelenideElement Cancel = $(".modal-footer .btn");
    public static SelenideElement Close = $(".modal .custom-icon-button");
