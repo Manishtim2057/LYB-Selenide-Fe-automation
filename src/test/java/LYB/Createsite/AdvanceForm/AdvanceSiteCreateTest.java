@@ -49,6 +49,7 @@ public class AdvanceSiteCreateTest extends BaseSetup {
     }
 
     public void openSiteModal() throws InterruptedException {
+        
         AdvanceSite.NewSiteButton.click();
         Thread.sleep(1000);
         AdvanceSite.UseAdvanceForm.click();

@@ -3,6 +3,7 @@ import LYB.Createsite.Sitetest;
 import LYB.FileUpload.ZoomOut;
 import LYB.Login.Login;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
